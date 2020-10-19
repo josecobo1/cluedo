@@ -1,5 +1,4 @@
 // Characters
-
 let mrGreen = {
     first_name:   "Jacob",
     last_name:    "Green",
@@ -112,13 +111,13 @@ const randomSelector = (mazo) => {
     return mazo[Math.floor(Math.random() * mazo.length)];
 }
 
-const pickMistery = () => {
-    let character = randomSelector(charactersArray);
-    let rooms = randomSelector(roomsArray);
-    let weapons = randomSelector(weaponsArray);
+const pickMistery = (characters, rooms, weapons) => {
+    let character = randomSelector(characters);
+    let rooms = randomSelector(rooms);
+    let weapons = randomSelector(weapons);
 
     return misteryEnvelope = character.first_name + " " + character.last_name + " killed MR. Boddy using the " + weapons["name"] + " in the " +rooms;
     
 }
 
-pickMistery();
+pickMistery(charactersArray, roomsArray, weaponsArray);
